@@ -26,7 +26,7 @@
         <td>Rp<?= number_format($jbtn->gaji_pokok + $jbtn->tj_transport + $jbtn->uang_makan, 0, ',','.') ?></td>
         <td>
             <center>
-                <a class="btn btn-sm btn-warning" href="<?= base_url('admin/DataJabatan/update/' . $jbtn->id_jabatan) ?>"><i class="fas fa-edit"></i></a>
+                <a class="btn btn-sm btn-warning" href="<?= base_url('admin/DataJabatan/halamanUpdateJabatan/' . $jbtn->id_jabatan) ?>"><i class="fas fa-edit"></i></a>
                 <a onclick="return confirm('Yakin hapus?')" class="btn btn-sm btn-danger" href="<?= base_url('admin/DataJabatan/delete/' . $jbtn->id_jabatan) ?>"><i class="fas fa-trash"></i></a>
             </center>
         </td>
