@@ -28,6 +28,30 @@ class DataJabatan extends CI_Controller
         $this->load->view('admin/tambah-data-jabatan', $data);
         $this->load->view('templates_admin/footer');
     }
+
+    public function createJabatan() {
+        $this->_rules();
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->halamanTambahJabatan();
+        } else {
+            $nama_jabatan = $this->input->post('nama_jabatan');
+            $gaji_pokok = $this->input->post('gaji_pokok');
+            $tj_transport = $this->input->post('tj_transport');
+            $uang_makan = $this->input->post('uang_makan');
+
+            $arrayInsert = array(
+                'nama_jabatan' => $nama_jabatan,
+                'gaji_pokok' => $gaji_pokok,
+                'tj_transport' => $tj_transport,
+                'uang_makan' => $uang_makan
+            );
+            $this->penggajian->createJabatan($arrayInsert, 'data_jabatan');
+            $this->session->set_flashdata('alert', '<div class="alert alert-success alert-dismissible fade show" 
+            role="alert">Selamat, data berhasil ditambahkan!<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>');
+            redirect('admin/DataJabatan');
+        }
+    }
 }
 
 ?>
