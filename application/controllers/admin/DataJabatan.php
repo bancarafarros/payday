@@ -60,6 +60,48 @@ class DataJabatan extends CI_Controller
             redirect('admin/DataJabatan');
         }
     }
+
+        public function halamanUpdateJabatan($id) {
+            $data['title'] = 'Update Data Jabatan';
+            $where = array('id_jabatan' => $id);
+            $data['jabatan'] = $this->db->query("SELECT * FROM data_jabatan WHERE id_jabatan = '$id'")->result();
+    
+            $this->load->view('templates_admin/header', $data);
+            $this->load->view('templates_admin/sidebar');
+            $this->load->view('admin/update-data-jabatan', $data);
+            $this->load->view('templates_admin/footer');
+        }
+    
+        public function updateJabatan() {
+            $this->_rules();
+    
+            if ($this->form_validation->run() == FALSE) {
+                $this->halamanUpdateJabatan();
+            } else {
+                $id           = $this->input->post('id_jabatan');
+                $nama_jabatan = $this->input->post('nama_jabatan');
+                $gaji_pokok   = $this->input->post('gaji_pokok');
+                $tj_transport = $this->input->post('tj_transport');
+                $uang_makan   = $this->input->post('uang_makan');
+    
+                $arrayUpdate = array(
+                    'nama_jabatan' => $nama_jabatan,
+                    'gaji_pokok' => $gaji_pokok,
+                    'tj_transport' => $tj_transport,
+                    'uang_makan' => $uang_makan
+                );
+
+                $where = array(
+                    'id_jabatan' => $id
+                );
+
+                $this->penggajian->updateJabatan('data_jabatan', $arrayUpdate, $where);
+                $this->session->set_flashdata('alert', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Selamat, data berhasil diupdate!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button></div>');
+                redirect('admin/DataJabatan');
+            }
+        }
 }
 
 ?>
