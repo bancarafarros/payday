@@ -27,7 +27,7 @@
         <td>
             <center>
                 <a class="btn btn-sm btn-warning" href="<?= base_url('admin/DataJabatan/halamanUpdateJabatan/' . $jbtn->id_jabatan) ?>"><i class="fas fa-edit"></i></a>
-                <a onclick="return confirm('Yakin hapus?')" class="btn btn-sm btn-danger" href="<?= base_url('admin/DataJabatan/delete/' . $jbtn->id_jabatan) ?>"><i class="fas fa-trash"></i></a>
+                <a onclick="return confirm('Yakin hapus?')" class="btn btn-sm btn-danger" href="<?= base_url('admin/DataJabatan/deleteJabatan/' . $jbtn->id_jabatan) ?>"><i class="fas fa-trash"></i></a>
             </center>
         </td>
     </tr>
