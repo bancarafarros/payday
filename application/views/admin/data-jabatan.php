@@ -4,7 +4,7 @@
     <h1 class="h3 mb-0 text-gray-800"><?= $title ?></h1>
 </div>
 
-<a class="btn btn-sm btn-primary mb-3" href="<?= base_url('admin/DataJabatan/tambah/') ?>"><i class="fas fa-plus mr-2"></i>Tambah jabatan</a>
+<a class="btn btn-sm btn-primary mb-3" href="<?= base_url('admin/DataJabatan/halamanTambahJabatan') ?>"><i class="fas fa-plus mr-2"></i>Tambah jabatan</a>
 <table class="table table-bordered table-striped">
     <tr>
         <th class="text-center">No</th>
