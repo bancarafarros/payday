@@ -2,7 +2,7 @@
 
 class Dashboard extends CI_Controller
 {
-    function index() {
+    public function index() {
         $data['title'] = 'Dashboard';
         
         $pegawai = $this->db->query("SELECT * FROM data_pegawai");
