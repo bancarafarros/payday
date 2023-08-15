@@ -3,9 +3,9 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"><?= $title ?></h1>
 </div>
-
+<?= $this->session->flashdata('alert'); ?>
 <a class="btn btn-sm btn-primary mb-3" href="<?= base_url('admin/DataJabatan/halamanTambahJabatan') ?>"><i class="fas fa-plus mr-2"></i>Tambah jabatan</a>
-<table class="table table-bordered table-striped">
+<table class="table table-responsive table-bordered table-striped mt-2">
     <tr>
         <th class="text-center">No</th>
         <th class="text-center">Nama Jabatan</th>
