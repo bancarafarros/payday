@@ -11,7 +11,7 @@ class DataJabatan extends CI_Controller
     public function _rules() {
         $this->form_validation->set_rules('nama_jabatan', 'nama jabatan', 'required');
         $this->form_validation->set_rules('gaji_pokok', 'gaji pokok', 'required');
-        $this->form_validation->set_rules('tj_transport', 'tunjanagn tarnsport', 'required');
+        $this->form_validation->set_rules('tj_transport', 'tunjangan transport', 'required');
         $this->form_validation->set_rules('uang_makan', 'uang makan', 'required');
     }
     
