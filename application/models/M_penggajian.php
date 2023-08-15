@@ -9,6 +9,10 @@ class M_penggajian extends CI_Model
     public function createJabatan($data, $table) {
         $this->db->insert($table, $data);
     }
+
+    public function updateJabatan($table, $data, $where) {
+        $this->db->update($table, $data, $where);
+    }
 }
 
 ?>
