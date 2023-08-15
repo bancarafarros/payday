@@ -15,8 +15,9 @@
         <th class="text-center">Total</th>
         <th class="text-center">Aksi</th>
     </tr>
-    <?php $no = 1 ?>
-    <?php foreach ($jabatan as $jbtn) : ?>
+    <tr>
+        <?php $no = 1; ?>
+        <?php foreach ($jabatan as $jbtn) : ?>
         <td><?= $no++ ?></td>
         <td><?= $jbtn->nama_jabatan ?></td>
         <td>Rp<?= number_format($jbtn->gaji_pokok, 0, ',','.') ?></td>
@@ -29,6 +30,7 @@
                 <a onclick="return confirm('Yakin hapus?')" class="btn btn-sm btn-danger" href="<?= base_url('admin/DataJabatan/delete/' . $jbtn->id_jabatan) ?>"><i class="fas fa-trash"></i></a>
             </center>
         </td>
+    </tr>
     <?php endforeach; ?>
 </table>
 
