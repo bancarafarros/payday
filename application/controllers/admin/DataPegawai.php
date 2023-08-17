@@ -27,7 +27,8 @@ class DataPegawai extends CI_Controller
 
     public function halamanTambahPegawai() {
         $data['title'] = 'Tambah Data Pegawai';
-
+        $data['jabatan'] = $this->penggajian->getData('data_jabatan')->result();
+        
         $this->load->view('templates_admin/header', $data);
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/tambah-data-pegawai', $data);
