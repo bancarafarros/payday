@@ -6,21 +6,17 @@ class M_penggajian extends CI_Model
         return $this->db->get($table);
     }
     
-    public function createJabatan($data, $table) {
+    public function createData($data, $table) {
         $this->db->insert($table, $data);
     }
 
-    public function updateJabatan($table, $data, $where) {
+    public function updateData($table, $data, $where) {
         $this->db->update($table, $data, $where);
     }
 
-    public function deleteJabatan($where, $table) {
+    public function deleteData($where, $table) {
         $this->db->where($where);
         $this->db->delete($table);
-    }
-
-    public function createPegawai($data, $table) {
-        $this->db->insert($table, $data);
     }
 }
 
