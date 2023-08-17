@@ -147,6 +147,15 @@ class DataPegawai extends CI_Controller
             redirect('admin/DataPegawai');
         }
     }
+
+    public function deletePegawai($id) {
+        $where = array('id_pegawai' => $id);
+        $this->penggajian->deleteData($where, 'data_pegawai');
+        $this->session->set_flashdata('alert', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Selamat, data berhasil dihapus!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button></div>');
+        redirect('admin/DataPegawai');
+    }
 }
 
 ?>
