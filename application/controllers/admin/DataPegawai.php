@@ -96,6 +96,57 @@ class DataPegawai extends CI_Controller
         $this->load->view('admin/update-data-pegawai', $data);
         $this->load->view('templates_admin/footer');
     }
+
+    public function updatePegawai() {
+        $this->_rules();
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->halamanUpdatePegawai($id);
+        } else {
+            $id = $this->input->post('id_pegawai');
+            $nik = $this->input->post('nik');
+            $nama_pegawai = $this->input->post('nama_pegawai');
+            $jenis_kelamin = $this->input->post('jenis_kelamin');
+            $jabatan = $this->input->post('jabatan');
+            $tanggal_masuk = $this->input->post('tanggal_masuk');
+            $status = $this->input->post('status');
+            $config['upload_path'] = './assets/photo';
+            $config['allowed_types'] = 'jpg|jpeg|png|gif';
+            $config['max_size']      = 100000000000000000000000000000000000000000;
+            $config['max_width']     = 100000000000000000000000000000000000000000;
+            $config['max_height']    = 100000000000000000000000000000000000000000;
+            $this->upload->initialize($config);
+            $file = $this->upload->do_upload('foto');
+            $data = $this->upload->data();
+
+            if ($file) {
+                $data = $this->upload->data();
+                $foto = $data['file_name'];
+            } else {
+                $foto = $this->input->post('foto');
+            }
+
+            $arrayUpdate = array(
+                'nik' => $nik,
+                'nama_pegawai' => $nama_pegawai,
+                'jenis_kelamin' => $jenis_kelamin,
+                'jabatan' => $jabatan,
+                'tanggal_masuk' => $tanggal_masuk,
+                'status' => $status,
+                'foto' => $foto
+            );
+
+            $where = array(
+                'id_pegawai' => $id
+            );
+            
+            $this->penggajian->updateData('data_pegawai', $arrayUpdate, $where);
+            $this->session->set_flashdata('alert', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Selamat, data berhasil diupdate!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button></div>');
+            redirect('admin/DataPegawai');
+        }
+    }
 }
 
 ?>
