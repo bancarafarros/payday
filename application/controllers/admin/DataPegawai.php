@@ -84,6 +84,17 @@ class DataPegawai extends CI_Controller
             redirect('admin/DataPegawai');
         }
     }
+
+    public function halamanUpdatePegawai($id) {
+        $data['title'] = 'Update Data Pegawai';
+        $where = array('id_pegawai' => $id);
+        $data['pegawai'] = $this->db->query("SELECT * FROM data_pegawai WHERE id_pegawai = '$id'")->result();
+    
+        $this->load->view('templates_admin/header', $data);
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/update-data-pegawai', $data);
+        $this->load->view('templates_admin/footer');
+    }
 }
 
 ?>
