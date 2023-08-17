@@ -36,7 +36,7 @@
                 </center>
             </td>
         </tr>
-    <?php endforeach ?>
+    <?php endforeach; ?>
 </table>
 </div>
 <!-- /.container-fluid -->
