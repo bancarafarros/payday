@@ -24,6 +24,15 @@ class DataPegawai extends CI_Controller
         $this->load->view('admin/data-pegawai', $data);
         $this->load->view('templates_admin/footer');
     }
+
+    public function halamanTambahPegawai() {
+        $data['title'] = 'Tambah Data Pegawai';
+
+        $this->load->view('templates_admin/header', $data);
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/tambah-data-pegawai', $data);
+        $this->load->view('templates_admin/footer');
+    }
 }
 
 ?>
