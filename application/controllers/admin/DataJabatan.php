@@ -16,8 +16,6 @@ class DataJabatan extends CI_Controller
     }
     
     public function index() {
-        $this->load->model('M_penggajian', 'penggajian');
-
         $data['title'] = 'Data Jabatan';
         $data['jabatan'] = $this->penggajian->getData('data_jabatan')->result();
 
