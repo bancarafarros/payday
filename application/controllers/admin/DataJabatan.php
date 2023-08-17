@@ -74,7 +74,7 @@ class DataJabatan extends CI_Controller
         $this->_rules();
     
         if ($this->form_validation->run() == FALSE) {
-            $this->halamanUpdateJabatan();
+            $this->halamanUpdateJabatan($id);
         } else {
             $id           = $this->input->post('id_jabatan');
             $nama_jabatan = $this->input->post('nama_jabatan');
