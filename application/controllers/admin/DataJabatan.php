@@ -51,7 +51,7 @@ class DataJabatan extends CI_Controller
                 'tj_transport' => $tj_transport,
                 'uang_makan' => $uang_makan
             );
-            $this->penggajian->createJabatan($arrayInsert, 'data_jabatan');
+            $this->penggajian->createData($arrayInsert, 'data_jabatan');
             $this->session->set_flashdata('alert', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Selamat, data berhasil ditambahkan!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span></button></div>');
@@ -93,7 +93,7 @@ class DataJabatan extends CI_Controller
                 'id_jabatan' => $id
             );
 
-            $this->penggajian->updateJabatan('data_jabatan', $arrayUpdate, $where);
+            $this->penggajian->updateData('data_jabatan', $arrayUpdate, $where);
             $this->session->set_flashdata('alert', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Selamat, data berhasil diupdate!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span></button></div>');
@@ -103,7 +103,7 @@ class DataJabatan extends CI_Controller
 
     public function deleteJabatan($id) {
         $where = array('id_jabatan' => $id);
-        $this->penggajian->deleteJabatan($where, 'data_jabatan');
+        $this->penggajian->deleteData($where, 'data_jabatan');
         $this->session->set_flashdata('alert', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Selamat, data berhasil dihapus!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button></div>');
