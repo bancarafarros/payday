@@ -2,11 +2,11 @@
 
 class DataPegawai extends CI_Controller
 {
-    // public function __construct()
-	// {
-	// 	parent::__construct();
-	// 	$this->load->model('M_penggajian', 'penggajian');
-	// }
+    public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('M_penggajian', 'penggajian');
+	}
 
     // public function _rules() {
     //     $this->form_validation->set_rules('nama_jabatan', 'nama jabatan', 'required');
