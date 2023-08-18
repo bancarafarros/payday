@@ -5,7 +5,7 @@
     </div>
 
     <div class="card mb-3">
-        <div class="card-header bg-primary text-white">Filter Data Absensi Pegawai</div>
+        <div class="card-header bg-primary text-white">Input Absensi Pegawai</div>
         <div class="card-body">
             <form class="form-inline">
                 <div class="form-group mb-2">
@@ -37,8 +37,7 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fas fa-eye mr-2"></i>Tampil data</button>
-                <a class="btn btn-success mb-2 ml-3" href="<?= base_url('admin/DataAbsensi/inputAbsensi') ?>"><i class="fas fa-plus mr-2"></i>Input absensi</a>
+                <button type="submit" class="btn btn-primary mb-2 ml-auto"><i class="fas fa-eye mr-2"></i>Generate</button>
             </form>
         </div>
     </div>
@@ -55,12 +54,8 @@
         }
     ?>
     <div class="alert alert-info">Menampilkan Data Kehadiran Pegawai Bulan: <strong><?= $bulan; ?></strong> Tahun: <strong><?= $tahun; ?></strong></div>
-
-    <?php
-        $jmlData = count($absensi);
-        if ($jmlData > 0) {
-    ?>
     
+    <button type="submit" class="btn btn-success mb-3">Simpan</button>
     <table class="table table bordered table-striped">
         <tr>
             <td class="text-center">No</td>
@@ -68,29 +63,25 @@
             <td class="text-center">Nama Pegawai</td>
             <td class="text-center">Jenis Kelamin</td>
             <td class="text-center">Jabatan</td>
-            <td class="text-center">Hadir</td>
-            <td class="text-center">Sakit</td>
-            <td class="text-center">Alpha</td>
+            <td class="text-center" width="6%">Hadir</td>
+            <td class="text-center" width="6%">Sakit</td>
+            <td class="text-center" width="6%">Alpha</td>
         </tr>
 
         <?php $no = 1; ?>
-        <?php foreach ($absensi as $abs) : ?>
+        <?php foreach ($inputAbsensi as $abs) : ?>
         <tr>
-            <td><?= $no++; ?></td>
-            <td><?= $abs->nik; ?></td>
-            <td><?= $abs->nama_pegawai; ?></td>
-            <td><?= $abs->jenis_kelamin; ?></td>
-            <td><?= $abs->jabatan; ?></td>
-            <td><?= $abs->hadir; ?></td>
-            <td><?= $abs->sakit; ?></td>
-            <td><?= $abs->alpha; ?></td>
+            <td class="text-center"><?= $no++; ?></td>
+            <td class="text-center"><?= $abs->nik; ?></td>
+            <td class="text-center"><?= $abs->nama_pegawai; ?></td>
+            <td class="text-center"><?= $abs->jenis_kelamin; ?></td>
+            <td class="text-center"><?= $abs->jabatan; ?></td>
+            <td class="text-center"><input type="number" class="form-control" name="hadir" ></td>
+            <td class="text-center"><input type="number" class="form-control" name="sakit" ></td>
+            <td class="text-center"><input type="number" class="form-control" name="alpha" ></td>
         </tr>
         <?php endforeach; ?>
     </table>
-
-    <?php } else { ?>
-        <span class="badge badge-danger"><i class="fas fa-info-circle"></i>Data masih kosong, silahkan input data absensi pada bulan dan tahun yang Anda pilih</span>
-    <?php } ?>
-
+    <br><br><br><br><br>
 </div>
 <!-- /.container-fluid -->
