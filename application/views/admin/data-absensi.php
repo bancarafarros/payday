@@ -56,6 +56,11 @@
     ?>
     <div class="alert alert-info">Menampilkan Data Kehadiran Pegawai Bulan: <strong><?= $bulan; ?></strong> Tahun: <strong><?= $tahun; ?></strong></div>
 
+    <?php
+        $jmlData = count($absensi);
+        if ($jmlData > 0) {
+    ?>
+    
     <table class="table table bordered table-striped">
         <tr>
             <td class="text-center">No</td>
@@ -82,6 +87,10 @@
         </tr>
         <?php endforeach; ?>
     </table>
+
+    <?php } else { ?>
+        <span class="badge badge-danger"><i class="fas fa-info-circle"></i>Data masih kosong, silahkan input data absensi pada bulan dan tahun yang Anda pilih</span>
+    <?php } ?>
 
 </div>
 <!-- /.container-fluid -->
