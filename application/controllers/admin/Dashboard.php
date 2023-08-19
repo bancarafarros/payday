@@ -14,8 +14,8 @@ class Dashboard extends CI_Controller
         $jabatan = $this->db->query("SELECT * FROM data_jabatan");
         $data['jabatan'] = $jabatan->num_rows();
         
-        $kehadiran = $this->db->query("SELECT * FROM data_kehadiran");
-        $data['kehadiran'] = $kehadiran->num_rows();
+        $absensi = $this->db->query("SELECT * FROM data_absensi");
+        $data['absensi'] = $absensi->num_rows();
         
         $this->load->view('templates_admin/header', $data);
         $this->load->view('templates_admin/sidebar');
