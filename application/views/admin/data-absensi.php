@@ -4,6 +4,8 @@
         <h1 class="h3 mb-0 text-gray-800"><?= $title ?></h1>
     </div>
 
+    <?= $this->session->flashdata('alert'); ?>
+
     <div class="card mb-3">
         <div class="card-header bg-primary text-white">Filter Data Absensi Pegawai</div>
         <div class="card-body">
