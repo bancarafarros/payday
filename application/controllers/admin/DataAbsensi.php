@@ -14,14 +14,14 @@ class DataAbsensi extends CI_Controller
         if ((isset($_GET['bulan']) && $_GET['bulan']!='') && (isset($_GET['tahun']) && $_GET['tahun']!='')) {
             $bulan = $_GET['bulan'];
             $tahun = $_GET['tahun'];
-            $dataWaktu = $bulan . $tahun;
+            $bulanTahun = $bulan . $tahun;
         } else {
             $bulan = date('m');
             $tahun = date('y');
-            $dataWaktu = $bulan . $tahun;
+            $bulanTahun = $bulan . $tahun;
         }
         
-        $data['absensi'] = $this->db->query("SELECT data_absensi . *, data_pegawai.nama_pegawai, data_pegawai.jenis_kelamin, data_pegawai.jabatan FROM data_absensi INNER JOIN data_pegawai ON data_absensi.nik=data_pegawai.nik INNER JOIN data_jabatan ON data_pegawai.jabatan = data_jabatan.nama_jabatan WHERE data_absensi.bulan='$dataWaktu' ORDER BY data_pegawai.nama_pegawai ASC")->result();
+        $data['absensi'] = $this->db->query("SELECT data_absensi . *, data_pegawai.nama_pegawai, data_pegawai.jenis_kelamin, data_pegawai.jabatan FROM data_absensi INNER JOIN data_pegawai ON data_absensi.nik=data_pegawai.nik INNER JOIN data_jabatan ON data_pegawai.jabatan = data_jabatan.nama_jabatan WHERE data_absensi.bulan='$bulanTahun' ORDER BY data_pegawai.nama_pegawai ASC")->result();
 
         $this->load->view('templates_admin/header', $data);
         $this->load->view('templates_admin/sidebar');
@@ -34,16 +34,16 @@ class DataAbsensi extends CI_Controller
             $post = $this->input->post();
 
             foreach ($post['bulan'] as $key => $value) {
-                if ($post['bulan'][$key] != '' || $post['nik'][$key] != '') {
+                if($post['bulan'][$key] !='' || $post['nik'][$key] !='') {
                     $simpan[] = array(
-                        'bulan'              => $post['bulan'][$key],
-                        'nik'                => $post['nik'][$key],
-                        'nama_pegawai'       => $post['nama_pegawai'][$key],
-                        'jenis_kelamin'      => $post['jenis_kelamin'][$key],
-                        'nama_jabatan'       => $post['nama_jabatan'][$key],
-                        'hadir'              => $post['hadir'][$key],
-                        'sakit'              => $post['sakit'][$key],
-                        'alpha'              => $post['alpha'][$key]
+                        'bulan' => $post['bulan'][$key],
+                        'nik' => $post['nik'][$key],
+                        'nama_pegawai' => $post['nama_pegawai'][$key],
+                        'jenis_kelamin' => $post['jenis_kelamin'][$key],
+                        'nama_jabatan' => $post['nama_jabatan'][$key],
+                        'hadir' => $post['hadir'][$key],
+                        'sakit' => $post['sakit'][$key],
+                        'alpha' => $post['alpha'][$key],
                     );
                 }
             }
@@ -60,14 +60,14 @@ class DataAbsensi extends CI_Controller
         if ((isset($_GET['bulan']) && $_GET['bulan']!='') && (isset($_GET['tahun']) && $_GET['tahun']!='')) {
             $bulan = $_GET['bulan'];
             $tahun = $_GET['tahun'];
-            $dataWaktu = $bulan . $tahun;
+            $bulanTahun = $bulan . $tahun;
         } else {
             $bulan = date('m');
             $tahun = date('y');
-            $dataWaktu = $bulan . $tahun;
+            $bulanTahun = $bulan . $tahun;
         }
 
-        $data['inputAbsensi'] = $this->db->query("SELECT data_pegawai.*, data_jabatan.nama_jabatan FROM data_pegawai INNER JOIN data_jabatan ON data_pegawai.jabatan=data_jabatan.nama_jabatan WHERE NOT EXISTS (SELECT * FROM data_absensi WHERE bulan='$dataWaktu' AND data_pegawai.nik=data_absensi.nik) ORDER BY data_pegawai.nama_pegawai ASC")->result();
+        $data['inputAbsensi'] = $this->db->query("SELECT data_pegawai.*, data_jabatan.nama_jabatan FROM data_pegawai INNER JOIN data_jabatan ON data_pegawai.jabatan=data_jabatan.nama_jabatan WHERE NOT EXISTS (SELECT * FROM data_absensi WHERE bulan='$bulanTahun' AND data_pegawai.nik=data_absensi.nik) ORDER BY data_pegawai.nama_pegawai ASC")->result();
         $this->load->view('templates_admin/header', $data);
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/input-absensi', $data);
