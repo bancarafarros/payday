@@ -55,33 +55,40 @@
     ?>
     <div class="alert alert-info">Menampilkan Data Kehadiran Pegawai Bulan: <strong><?= $bulan; ?></strong> Tahun: <strong><?= $tahun; ?></strong></div>
     
-    <button type="submit" class="btn btn-success mb-3">Simpan</button>
-    <table class="table table bordered table-striped">
-        <tr>
-            <td class="text-center">No</td>
-            <td class="text-center">NIK</td>
-            <td class="text-center">Nama Pegawai</td>
-            <td class="text-center">Jenis Kelamin</td>
-            <td class="text-center">Jabatan</td>
-            <td class="text-center" width="6%">Hadir</td>
-            <td class="text-center" width="6%">Sakit</td>
-            <td class="text-center" width="6%">Alpha</td>
-        </tr>
+    <form action="" method="POST">
+        <button type="submit" name="submit" value="submit" class="btn btn-success mb-3">Simpan</button>
+        <table class="table table bordered table-striped">
+            <tr>
+                <td class="text-center">No</td>
+                <td class="text-center">NIK</td>
+                <td class="text-center">Nama Pegawai</td>
+                <td class="text-center">Jenis Kelamin</td>
+                <td class="text-center">Jabatan</td>
+                <td class="text-center" width="6%">Hadir</td>
+                <td class="text-center" width="6%">Sakit</td>
+                <td class="text-center" width="6%">Alpha</td>
+            </tr>
 
-        <?php $no = 1; ?>
-        <?php foreach ($inputAbsensi as $abs) : ?>
-        <tr>
-            <td class="text-center"><?= $no++; ?></td>
-            <td class="text-center"><?= $abs->nik; ?></td>
-            <td class="text-center"><?= $abs->nama_pegawai; ?></td>
-            <td class="text-center"><?= $abs->jenis_kelamin; ?></td>
-            <td class="text-center"><?= $abs->jabatan; ?></td>
-            <td class="text-center"><input type="number" class="form-control" name="hadir" ></td>
-            <td class="text-center"><input type="number" class="form-control" name="sakit" ></td>
-            <td class="text-center"><input type="number" class="form-control" name="alpha" ></td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
-    <br><br><br><br><br>
+            <?php $no = 1; ?>
+            <?php foreach ($inputAbsensi as $abs) : ?>
+            <tr>
+                <input type="hidden" class="form-control" value="<?= $dataWaktu ?>" name"bulan[]">
+                <input type="hidden" class="form-control" value="<?= $abs->nik ?>" name"nik[]">
+                <input type="hidden" class="form-control" value="<?= $abs->nama_pegawai ?>" name"nama_pegawai[]">
+                <input type="hidden" class="form-control" value="<?= $abs->jenis_kelamin ?>" name"jenis_kelamin[]">
+                <input type="hidden" class="form-control" value="<?= $abs->nama_jabatan ?>" name"nama_jabatan[]">
+                <td class="text-center"><?= $no++; ?></td>
+                <td class="text-center"><?= $abs->nik; ?></td>
+                <td class="text-center"><?= $abs->nama_pegawai; ?></td>
+                <td class="text-center"><?= $abs->jenis_kelamin; ?></td>
+                <td class="text-center"><?= $abs->jabatan; ?></td>
+                <td class="text-center"><input type="number" class="form-control" value="0" name"hadir[]"></td>
+                <td class="text-center"><input type="number" class="form-control" value="0" name"sakit[]"></td>
+                <td class="text-center"><input type="number" class="form-control" value="0" name"alpha[]"></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <br><br><br><br><br>
+    </form>
 </div>
 <!-- /.container-fluid -->

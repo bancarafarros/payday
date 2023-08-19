@@ -30,6 +30,31 @@ class DataAbsensi extends CI_Controller
     }
 
     public function inputAbsensi() {
+        if ($this->input->post('submit', TRUE) == 'submit') {
+            $post = $this->input->post();
+
+            foreach ($post['bulan'] as $key => $value) {
+                if ($post['bulan'][$key] != '' || $post['nik'][$key] != '') {
+                    $simpan[] = array(
+                        'bulan'              => $post['bulan'][$key],
+                        'nik'                => $post['nik'][$key],
+                        'nama_pegawai'       => $post['nama_pegawai'][$key],
+                        'jenis_kelamin'      => $post['jenis_kelamin'][$key],
+                        'nama_jabatan'       => $post['nama_jabatan'][$key],
+                        'hadir'              => $post['hadir'][$key],
+                        'sakit'              => $post['sakit'][$key],
+                        'alpha'              => $post['alpha'][$key]
+                    );
+                }
+            }
+
+            $this->penggajian->createAbsensi('data_absensi', $simpan);
+            $this->session->set_flashdata('alert', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Selamat, data berhasil ditambahkan!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button></div>');
+            redirect('admin/DataAbsensi');
+        }
+        
         $data['title'] = 'Form Input Absensi';
 
         if ((isset($_GET['bulan']) && $_GET['bulan']!='') && (isset($_GET['tahun']) && $_GET['tahun']!='')) {

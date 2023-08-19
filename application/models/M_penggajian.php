@@ -18,6 +18,13 @@ class M_penggajian extends CI_Model
         $this->db->where($where);
         $this->db->delete($table);
     }
+
+    public function createAbsensi($table = null, $data = array()) {
+        $jumlah = count($data);
+        if ($jumlah > 0) {
+            $this->db->insert_batch($table, $data);
+        }
+    }
 }
 
 ?>
