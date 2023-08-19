@@ -46,6 +46,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="<?= base_url('admin/DataAbsensi'); ?>">Data Absensi</a>
                         <a class="collapse-item" href="<?= base_url('admin/DataGaji'); ?>">Data Gaji</a>
+                        <a class="collapse-item" href="<?= base_url('admin/PotonganGaji'); ?>">Potongan Gaji</a>
                     </div>
                 </div>
             </li>
