@@ -25,7 +25,7 @@
         <td>
             <center>
                 <a class="btn btn-sm btn-warning" href="<?= base_url('admin/PotonganGaji/halamanUpdatePotonganGaji/' . $pg->id_potongan) ?>"><i class="fas fa-edit"></i></a>
-                <a onclick="return confirm('Yakin hapus?')" class="btn btn-sm btn-danger" href="<?= base_url('admin/DataPegawai/deletePotonganGaji/' . $pg->id_potongan) ?>"><i class="fas fa-trash"></i></a>
+                <a onclick="return confirm('Yakin hapus?')" class="btn btn-sm btn-danger" href="<?= base_url('admin/PotonganGaji/deletePotonganGaji/' . $pg->id_potongan) ?>"><i class="fas fa-trash"></i></a>
             </center>
         </td>
     </tr>
