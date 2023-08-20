@@ -66,6 +66,7 @@
                 <td class="text-center">Jabatan</td>
                 <td class="text-center" width="6%">Hadir</td>
                 <td class="text-center" width="6%">Sakit</td>
+                <td class="text-center" width="6%">Izin</td>
                 <td class="text-center" width="6%">Alpha</td>
             </tr>
 
@@ -85,6 +86,7 @@
                 <td><?= $abs->jabatan; ?></td>
                 <td><input type="number" name="hadir[]" class="form-control" value="0"></td>
                 <td><input type="number" name="sakit[]" class="form-control" value="0"></td>
+                <td><input type="number" name="izin[]" class="form-control" value="0"></td>
                 <td><input type="number" name="alpha[]" class="form-control" value="0"></td>
             </tr>
             <?php endforeach; ?>

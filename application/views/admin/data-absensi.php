@@ -72,6 +72,7 @@
             <td class="text-center">Jabatan</td>
             <td class="text-center">Hadir</td>
             <td class="text-center">Sakit</td>
+            <td class="text-center">Izin</td>
             <td class="text-center">Alpha</td>
         </tr>
 
@@ -85,6 +86,7 @@
             <td><?= $abs->jabatan; ?></td>
             <td><?= $abs->hadir; ?></td>
             <td><?= $abs->sakit; ?></td>
+            <td><?= $abs->izin; ?></td>
             <td><?= $abs->alpha; ?></td>
         </tr>
         <?php endforeach; ?>
