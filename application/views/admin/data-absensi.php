@@ -49,11 +49,11 @@
         if ((isset($_GET['bulan']) && $_GET['bulan']!='') && (isset($_GET['tahun']) && $_GET['tahun']!='')) {
             $bulan = $_GET['bulan'];
             $tahun = $_GET['tahun'];
-            $dataWaktu = $bulan . $tahun;
+            $bulanTahun = $bulan . $tahun;
         } else {
             $bulan = date('m');
             $tahun = date('y');
-            $dataWaktu = $bulan . $tahun;
+            $bulanTahun = $bulan . $tahun;
         }
     ?>
     <div class="alert alert-info">Menampilkan Data Kehadiran Pegawai Bulan: <strong><?= $bulan; ?></strong> Tahun: <strong><?= $tahun; ?></strong></div>
