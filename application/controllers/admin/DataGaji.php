@@ -23,7 +23,7 @@ class DataGaji extends CI_Controller
             $bulanTahun = $bulan . $tahun;
         } else {
             $bulan = date('m');
-            $tahun = date('y');
+            $tahun = date('Y');
             $bulanTahun = $bulan . $tahun;
         }
         $data['gaji'] = $this->db->query("SELECT data_pegawai.nik, data_pegawai.nama_pegawai, data_pegawai.jenis_kelamin, data_jabatan.nama_jabatan, data_jabatan.gaji_pokok, data_jabatan.tj_transport, data_jabatan.uang_makan, data_absensi.alpha FROM data_pegawai INNER JOIN data_absensi ON data_absensi.nik=data_pegawai.nik INNER JOIN data_jabatan ON data_jabatan.nama_jabatan=data_pegawai.jabatan WHERE data_absensi.bulan= '$bulanTahun' ORDER BY data_pegawai.nama_pegawai ASC")->result();
@@ -45,7 +45,7 @@ class DataGaji extends CI_Controller
             $bulanTahun = $bulan . $tahun;
         } else {
             $bulan = date('m');
-            $tahun = date('y');
+            $tahun = date('Y');
             $bulanTahun = $bulan . $tahun;
         }
         $data['cetakGaji'] = $this->db->query("SELECT data_pegawai.nik, data_pegawai.nama_pegawai, data_pegawai.jenis_kelamin, data_jabatan.nama_jabatan, data_jabatan.gaji_pokok, data_jabatan.tj_transport, data_jabatan.uang_makan, data_absensi.alpha FROM data_pegawai INNER JOIN data_absensi ON data_absensi.nik=data_pegawai.nik INNER JOIN data_jabatan ON data_jabatan.nama_jabatan=data_pegawai.jabatan WHERE data_absensi.bulan= '$bulanTahun' ORDER BY data_pegawai.nama_pegawai ASC")->result();
