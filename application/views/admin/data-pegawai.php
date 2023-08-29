@@ -16,6 +16,7 @@
         <th class="text-center">Tanggal Masuk</th>
         <th class="text-center">Status</th>
         <th class="text-center">Foto</th>
+        <th class="text-center">Hak Akses</th>
         <th class="text-center">Aksi</th>
     </tr>
     <?php $no = 1 ?>
@@ -29,6 +30,11 @@
             <td><?= $pgw->tanggal_masuk?></td>
             <td><?= $pgw->status?></td>
             <td><img src="<?= base_url('assets/photo/') . $pgw->foto?>" alt="" width="100 px"></td>
+            <?php if ($pgw->role_id == 1) { ?>
+                <td>Admin</td>
+            <?php } else { ?>
+                <td>Pegawai</td>
+            <?php } ?>
             <td>
                 <center>
                     <a class="btn btn-sm btn-warning" href="<?= base_url('admin/DataPegawai/halamanUpdatePegawai/' . $pgw->id_pegawai) ?>"><i class="fas fa-edit"></i></a>
