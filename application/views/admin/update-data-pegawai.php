@@ -22,6 +22,18 @@
             </div>
 
             <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" name="username" class="form-control" value="<?= $pgw->username ?>">
+                <?= form_error('username', '<div class="text-small text-danger"></div>') ?>
+            </div>
+
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" name="password" class="form-control" value="">
+                <?= form_error('password', '<div class="text-small text-danger"></div>') ?>
+            </div>
+
+            <div class="form-group">
                 <label for="">Jenis Kelamin</label>
                 <select name="jenis_kelamin" id="" class="form-control">
                 <option value="Laki-laki" <?php echo ($pgw->status == 'Laki-laki' ? ' selected' : ''); ?>>Laki-laki</option>

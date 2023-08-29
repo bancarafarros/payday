@@ -112,6 +112,8 @@ class DataPegawai extends CI_Controller
             $id = $this->input->post('id_pegawai');
             $nik = $this->input->post('nik');
             $nama_pegawai = $this->input->post('nama_pegawai');
+            $username = $this->input->post('username');
+            $password = sha1($this->input->post('password'));
             $jenis_kelamin = $this->input->post('jenis_kelamin');
             $jabatan = $this->input->post('jabatan');
             $tanggal_masuk = $this->input->post('tanggal_masuk');
@@ -136,6 +138,8 @@ class DataPegawai extends CI_Controller
             $arrayUpdate = array(
                 'nik' => $nik,
                 'nama_pegawai' => $nama_pegawai,
+                'username' => $username,
+                'password' => $password,
                 'jenis_kelamin' => $jenis_kelamin,
                 'jabatan' => $jabatan,
                 'tanggal_masuk' => $tanggal_masuk,
