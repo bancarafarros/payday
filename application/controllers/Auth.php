@@ -38,6 +38,11 @@ class Auth extends CI_Controller
                 redirect('Auth');
             
             } else {
+                $this->session->set_userdata('role_id', $auth->role_id);
+                $this->session->set_userdata('username', $auth->username);
+                $this->session->set_userdata('username', $auth->photo);
+                // $this->session->set_userdata('nama_pegawai', $auth->nama_pegawai);
+
                 switch ($auth->role_id) {
                     case 1:
                         redirect('admin/Dashboard');
@@ -52,6 +57,11 @@ class Auth extends CI_Controller
                 }
             }
         }
+    }
+
+    public function logout() {
+        $this->session->sess_destroy();
+        redirect('Auth');
     }
 }
 
