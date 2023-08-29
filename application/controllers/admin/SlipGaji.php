@@ -38,7 +38,7 @@ class SlipGaji extends CI_Controller
         // var_dump($nama_pegawai);
         // print_r($bulanTahun);
         // die();
-        $data['slipGaji'] = $this->db->query("SELECT data_pegawai.nik, data_pegawai.nama_pegawai, data_jabatan.nama_jabatan, data_jabatan.gaji_pokok, data_jabatan.tj_transport, data_jabatan.uang_makan, data_absensi.alpha FROM data_pegawai INNER JOIN data_absensi ON data_absensi.nik=data_pegawai.nik INNER JOIN data_jabatan ON data_jabatan.nama_jabatan=data_pegawai.jabatan WHERE data_absensi.bulan='$bulanTahun' AND data_absensi.nama_pegawai='$nama_pegawai'")->result();
+        $data['slipGaji'] = $this->db->query("SELECT data_pegawai.nik, data_pegawai.nama_pegawai, data_jabatan.nama_jabatan, data_jabatan.gaji_pokok, data_jabatan.tj_transport, data_jabatan.uang_makan, data_absensi.alpha, data_absensi.bulan FROM data_pegawai INNER JOIN data_absensi ON data_absensi.nik=data_pegawai.nik INNER JOIN data_jabatan ON data_jabatan.nama_jabatan=data_pegawai.jabatan WHERE data_absensi.bulan='$bulanTahun' AND data_absensi.nama_pegawai='$nama_pegawai'")->result();
         $data['potongan'] = $this->penggajian->getData('potongan_gaji')->result();
         // echo '<pre>';
         // print_r($data);

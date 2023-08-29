@@ -18,18 +18,6 @@
         <hr style="width: 50%;" border-width="5px" color="black">
     </center>
 
-    <?php
-    if ((isset($_GET['bulan']) && $_GET['bulan']!='') && (isset($_GET['tahun']) && $_GET['tahun']!='')) {
-        $bulan = $_GET['bulan'];
-        $tahun = $_GET['tahun'];
-        $bulanTahun = $bulan . $tahun;
-    } else {
-        $bulan = date('m');
-        $tahun = date('Y');
-        $bulanTahun = $bulan . $tahun;
-    }
-    ?>
-
     <?php foreach ($potongan as $ptg) {
         $nominalPotongan = $ptg->jml_potongan;
     }?>
@@ -55,12 +43,12 @@
         <tr>
             <td>Bulan</td>
             <td>:</td>
-            <td><?= $bulan ?></td>
+            <td><?= substr($sg->bulan, 0, 2) ?></td>
         </tr>
         <tr>
             <td>Tahun</td>
             <td>:</td>
-            <td><?= $tahun ?></td>
+            <td><?= substr($sg->bulan, 2, 4) ?></td>
         </tr>
     </table>
 
