@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 100px;">
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800"><?= $title ?></h1>
@@ -28,7 +28,11 @@
             <td><?= $pgw->jenis_kelamin ?></td>
             <td><?= $pgw->jabatan ?></td>
             <td><?= $pgw->tanggal_masuk?></td>
-            <td><?= $pgw->status?></td>
+            <?php if ($pgw->status == 1) { ?>
+                <td>Pegawai Tetap</td>
+            <?php } else { ?>
+                <td>Pegawai Tidak Tetap</td>
+            <?php } ?>
             <td><img src="<?= base_url('assets/photo/') . $pgw->foto?>" alt="" width="100 px"></td>
             <?php if ($pgw->role_id == 1) { ?>
                 <td>Admin</td>
