@@ -66,6 +66,7 @@ class DataPegawai extends CI_Controller
             } else {
                 $foto = $this->input->post('foto');
             }
+            $role_id = $this->input->post('role_id');
 
             $arrayInsert = array(
                 'nik' => $nik,
@@ -74,7 +75,8 @@ class DataPegawai extends CI_Controller
                 'jabatan' => $jabatan,
                 'tanggal_masuk' => $tanggal_masuk,
                 'status' => $status,
-                'foto' => $foto
+                'foto' => $foto,
+                'role_id' => $role_id
             );
             
             $this->penggajian->createData($arrayInsert, 'data_pegawai');
