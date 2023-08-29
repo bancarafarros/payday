@@ -7,15 +7,22 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admin/Dashboard'); ?>">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('pegawai/Dashboard'); ?>">
                 <div class="sidebar-brand-text mx-3">Payday</div>
             </a>
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('admin/Dashboard'); ?>">
+                <a class="nav-link" href="<?= base_url('pegawai/Dashboard'); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('pegawai/DataGaji'); ?>">
+                    <i class="fas fa-fw fa-money-check-alt"></i>
+                    <span>Data Gaji</span>
                 </a>
             </li>
 
@@ -28,8 +35,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('admin/DataPegawai'); ?>">Data Pegawai</a>
-                        <a class="collapse-item" href="<?= base_url('admin/DataJabatan'); ?>">Data Jabatan</a>
+                        <a class="collapse-item" href="<?= base_url('pegawai/DataPegawai'); ?>">Data Pegawai</a>
+                        <a class="collapse-item" href="<?= base_url('pegawai/DataJabatan'); ?>">Data Jabatan</a>
                     </div>
                 </div>
             </li>
@@ -44,9 +51,9 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('admin/DataAbsensi'); ?>">Data Absensi</a>
-                        <a class="collapse-item" href="<?= base_url('admin/DataGaji'); ?>">Data Gaji</a>
-                        <a class="collapse-item" href="<?= base_url('admin/PotonganGaji'); ?>">Potongan Gaji</a>
+                        <a class="collapse-item" href="<?= base_url('pegawai/DataAbsensi'); ?>">Data Absensi</a>
+                        <a class="collapse-item" href="<?= base_url('pegawai/DataGaji'); ?>">Data Gaji</a>
+                        <a class="collapse-item" href="<?= base_url('pegawai/PotonganGaji'); ?>">Potongan Gaji</a>
                     </div>
                 </div>
             </li>
@@ -60,16 +67,16 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('admin/LaporanGaji'); ?>">Laporan Gaji</a>
-                        <a class="collapse-item" href="<?= base_url('admin/LaporanAbsensi'); ?>">Laporan Absensi</a>
-                        <a class="collapse-item" href="<?= base_url('admin/SlipGaji'); ?>">Slip Gaji</a>
+                        <a class="collapse-item" href="<?= base_url('pegawai/LaporanGaji'); ?>">Laporan Gaji</a>
+                        <a class="collapse-item" href="<?= base_url('pegawai/LaporanAbsensi'); ?>">Laporan Absensi</a>
+                        <a class="collapse-item" href="<?= base_url('pegawai/SlipGaji'); ?>">Slip Gaji</a>
                     </div>
                 </div>
             </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('admin/GantiPassword') ?>">
+                <a class="nav-link" href="<?= base_url('pegawai/GantiPassword') ?>">
                     <i class="fas fa-fw fa-lock"></i>
                     <span>Ganti Password</span></a>
             </li>
