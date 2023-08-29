@@ -17,6 +17,7 @@
         <th class="text-center">Status</th>
         <th class="text-center">Foto</th>
         <th class="text-center">Hak Akses</th>
+        <th class="text-center">Username</th>
         <th class="text-center">Aksi</th>
     </tr>
     <?php $no = 1 ?>
@@ -39,6 +40,7 @@
             <?php } else { ?>
                 <td>Pegawai</td>
             <?php } ?>
+            <td><?= $pgw->username?></td>
             <td>
                 <center>
                     <a class="btn btn-sm btn-warning" href="<?= base_url('admin/DataPegawai/halamanUpdatePegawai/' . $pgw->id_pegawai) ?>"><i class="fas fa-edit"></i></a>
