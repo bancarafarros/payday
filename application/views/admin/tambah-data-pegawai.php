@@ -62,6 +62,16 @@
                 <!-- <?= form_error('foto', '<div class="text-small text-danger"></div>') ?> -->
             </div>
 
+            <div class="form-group">
+                <label for="">Hak Akses</label>
+                <select name="role_id" id="" class="form-control">
+                    <option value="">Pilih hak akses</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Pegawai</option>
+                </select>
+                <?= form_error('role_id', '<div class="text-small text-danger"></div>') ?>
+            </div>
+
             <button type="submit" class="btn btn-success">Simpan</button>
         </form>
     </div>
