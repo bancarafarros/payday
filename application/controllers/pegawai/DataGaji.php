@@ -28,6 +28,16 @@ class DataGaji extends CI_Controller
         $this->load->view('templates_pegawai/footer');
     }
     
+    public function cetakSlipGaji($id_kehadiran) {
+        $data['title'] = 'Cetak Slip Gaji';
+        
+        $data['potongan'] = $this->penggajian->getData('potongan_gaji')->result();
+        
+        $data['slipGaji'] = $this->db->query("SELECT data_pegawai.nik, data_pegawai.nama_pegawai,data_jabatan.nama_jabatan, data_jabatan.gaji_pokok, data_jabatan.tj_transport, data_jabatan.uang_makan, data_absensi.alpha, data_absensi.bulan FROM data_pegawai INNER JOIN data_absensi ON data_absensi.nik=data_pegawai.nik INNER JOIN data_jabatan ON data_jabatan.nama_jabatan=data_pegawai.jabatan WHERE data_absensi.id_kehadiran='$id_kehadiran'")->result();
+
+        $this->load->view('templates_pegawai/header', $data);
+        $this->load->view('pegawai/cetak-slip-gaji', $data);
+    }
 }
 
 ?>
