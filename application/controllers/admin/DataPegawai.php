@@ -47,6 +47,8 @@ class DataPegawai extends CI_Controller
         } else {
             $nik = $this->input->post('nik');
             $nama_pegawai = $this->input->post('nama_pegawai');
+            $username = $this->input->post('username');
+            $password = sha1($this->input->post('password'));
             $jenis_kelamin = $this->input->post('jenis_kelamin');
             $jabatan = $this->input->post('jabatan');
             $tanggal_masuk = $this->input->post('tanggal_masuk');
@@ -72,6 +74,8 @@ class DataPegawai extends CI_Controller
                 'nik' => $nik,
                 'nama_pegawai' => $nama_pegawai,
                 'jenis_kelamin' => $jenis_kelamin,
+                'username' => $username,
+                'password' => $password,
                 'jabatan' => $jabatan,
                 'tanggal_masuk' => $tanggal_masuk,
                 'status' => $status,
