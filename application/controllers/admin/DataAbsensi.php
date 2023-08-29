@@ -24,7 +24,7 @@ class DataAbsensi extends CI_Controller
             $bulanTahun = $bulan . $tahun;
         } else {
             $bulan = date('m');
-            $tahun = date('y');
+            $tahun = date('Y');
             $bulanTahun = $bulan . $tahun;
         }
         
@@ -71,7 +71,7 @@ class DataAbsensi extends CI_Controller
             $bulanTahun = $bulan . $tahun;
         } else {
             $bulan = date('m');
-            $tahun = date('y');
+            $tahun = date('Y');
             $bulanTahun = $bulan . $tahun;
         }
 

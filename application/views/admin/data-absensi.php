@@ -52,7 +52,7 @@
             $bulanTahun = $bulan . $tahun;
         } else {
             $bulan = date('m');
-            $tahun = date('y');
+            $tahun = date('Y');
             $bulanTahun = $bulan . $tahun;
         }
     ?>
