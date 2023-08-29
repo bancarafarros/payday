@@ -42,7 +42,7 @@ class Auth extends CI_Controller
                 $this->session->set_userdata('id_pegawai', $auth->id_pegawai);
                 $this->session->set_userdata('username', $auth->username);
                 $this->session->set_userdata('nama_pegawai', $auth->nama_pegawai);
-                $this->session->set_userdata('photo', $auth->photo);
+                $this->session->set_userdata('photo', $auth->foto);
                 $this->session->set_userdata('nik', $auth->nik);
 
                 switch ($auth->role_id) {
