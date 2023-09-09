@@ -21,9 +21,9 @@ class GantiPassword extends CI_Controller
     }
     
     public function index() {
-        $data['title'] = "Ganti Password";
+        $data['title'] = 'Ganti Password';
 
-        $this->load->view('templates_pegawai/header');
+        $this->load->view('templates_pegawai/header', $data);
         $this->load->view('templates_pegawai/sidebar');
         $this->load->view('pegawai/ganti-password', $data);
         $this->load->view('templates_pegawai/footer');
