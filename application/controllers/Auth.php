@@ -15,8 +15,17 @@ class Auth extends CI_Controller
     public function index() {
         $data['title'] = 'Login';
 
-        $this->load->view('templates_admin/header', $data);
-        $this->load->view('login', $data);
+        if ($this->session->userdata('role_id') == '1') {
+            redirect(base_url('admin/Dashboard'));
+        
+        } else if ($this->session->userdata('role_id') == '2') {
+            redirect(base_url('pegawai/Dashboard'));
+        
+        } else {
+            $this->load->view('templates_admin/header', $data);
+            $this->load->view('login', $data);
+        }
+
     }
     
     public function login() {
