@@ -12,14 +12,14 @@
             </a>
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(2) == 'Dashboard' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('pegawai/Dashboard'); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(2) == 'DataGaji' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('pegawai/DataGaji'); ?>">
                     <i class="fas fa-fw fa-money-check-alt"></i>
                     <span>Data Gaji</span>
@@ -27,14 +27,14 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(2) == 'GantiPassword' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('pegawai/GantiPassword') ?>">
                     <i class="fas fa-fw fa-lock"></i>
                     <span>Ganti Password</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(2) == 'logout' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('Auth/logout') ?>">
                     <i class="fas fa-fw fa-sign-out-alt"></i>
                     <span>Logout</span></a>
