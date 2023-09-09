@@ -12,7 +12,7 @@
             </a>
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(2) == 'Dashboard' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('admin/Dashboard'); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
@@ -20,7 +20,7 @@
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(2) == 'DataPegawai' || $this->uri->segment(2) == 'DataJabatan' ? 'active' : '' ?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-database"></i>
@@ -35,7 +35,7 @@
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(2) == 'DataAbsensi' || $this->uri->segment(2) == 'DataGaji' || $this->uri->segment(2) == 'PotonganGaji' ? 'active' : '' ?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-money-check-alt"></i>
@@ -52,7 +52,7 @@
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(2) == 'LaporanGaji' || $this->uri->segment(2) == 'LaporanAbsensi' || $this->uri->segment(2) == 'SlipGaji' ? 'active' : '' ?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-copy"></i>
@@ -68,7 +68,7 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item <?= $this->uri->segment(2) == 'GantiPassword' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('admin/GantiPassword') ?>">
                     <i class="fas fa-fw fa-lock"></i>
                     <span>Ganti Password</span></a>
