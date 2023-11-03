@@ -1,98 +1,28 @@
-# Dicoding-DevOps Engineer
+# PayDay - Sistem Infomasi Manajemen Gaji Pegawai
 
-Submission Menjadi Linux System Administrator - Kelas Proyek Shell Scripting
+## 🚀 Tech Stack
 
-## 🚀 Deskripsi Kelas
-
-Kelas Proyek Shell Scripting <br>
-Disusun oleh: Dicoding Indonesia <br>
-Level: Menengah
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/95717485/225231893-e59de44d-0d3e-4e79-971b-a4d494565a74.png" alt="Dicoding AWS">
-</div>
-
-<br>
+CodeIgniter 3 <br>
+PHP 7.4 <br>
+Bootstrap 4 <br>
 
 ---
 
-Tata cara menjalankan project:
+Tata cara mengakses project:
 
-1. Buat file bash scrip
-
+1. Mengunjungi website di bawah ini
 ```
-touch script-adzkiaadi_dicoding.sh
-```
-
-2. Edit file bash scrip
-
-```
-nano script-adzkiaadi_dicoding.sh
+https://cairbrou.000webhostapp.com/
 ```
 
-3. Salin Scrip berikut :
-
+2. Melakukan login dengan salah satu akun di bawah ini
 ```
-#Proyek Shell Scripting by adzkiaadi
-
-#!/bin/bash
-
-#Menggunakan perulangan while supaya semua perintah pada berkas script berjalan terus tanpa henti.
-#Syntax while (open)
-while true
-do
-
-#Menampilkan ukuran memory pada sistem dalam satuan megabytes.
-echo ""
-free --mega
-echo ""
-#Syntax untuk menjeda
-sleep 3s
-
-#Menampilkan penggunaan ruang disk pada filesystem dalam satuan gigabytes.
-echo ""
-df -h -BG
-echo ""
-#Syntax untuk menjeda
-sleep 3s
-
-#Menampilkan penggunaan ruang disk pada filesystem hanya untuk kolom Filesystem dan Use% (ditampilkan juga nama kolomnya) serta tanpa menyertakan tmpfs.
-echo ""
-df -h --output='source','pcent' -x tmpfs
-echo ""
-#Syntax untuk menjeda
-sleep 1m
-
-#Syntax while (close)
-done
+|   Username   |  Password   |   Role   |
+|--------------|------------|----------|
+|   wokawoka   |   12345    |  Pegawai |
+|  kiwiwiwiwi  | asdfghjkl  |   Admin  |
+|    uadmin    |   12345    |   Admin  |
+|    brabus    |   09876    |  Pegawai |
 ```
 
-4. Beri Hak Akses Execute pada file Bash Scrip
-
-```
-chmod +x script-adzkiaadi_dicoding.sh
-```
-
-5. Coba Jalankan File Bash Scrip
-
-```
-./script-adzkiaadi_dicoding.sh
-```
-
-6. Buat file txt untuk menampung History
-
-```
-touch history-adzkiaadi_dicoding.txt
-```
-
-7. Jalankan syntax berikut untuk mendapatkan History
-
-```
-history >> history-adzkiaadi_dicoding.txt
-```
-
-8. Langkah terakhir Zip 2 File yang sudah kita buat dan config sebelumnya
-
-```
-zip submission1-linux-adzkiaadi_dicoding.zip script-adzkiaadi_dicoding.sh history-adzkiaadi_dicoding.txt
-```
+3. Selamat, Anda sudah bisa menggunakan project!.
