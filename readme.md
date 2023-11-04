@@ -23,12 +23,12 @@ Untuk menggunakan sistem informasi ini, mohon ikuti langkah-langkah berikut:
 
    Anda dapat login menggunakan salah satu akun di bawah ini:
 
-|   Username   |  Password  |   Role   |
-|--------------|------------|----------|
-|   wokawoka   |   12345    |  Pegawai |
-|  kiwiwiwiwi  | asdfghjkl  |   Admin  |
-|    uadmin    |   12345    |   Admin  |
-|    brabus    |   09876    |  Pegawai |
+   |   Username   |  Password  |   Role   |
+   |--------------|------------|----------|
+   |   wokawoka   |   12345    |  Pegawai |
+   |  kiwiwiwiwi  | asdfghjkl  |   Admin  |
+   |    uadmin    |   12345    |   Admin  |
+   |    brabus    |   09876    |  Pegawai |
 
 3. **Selamat, Anda Sudah Bisa Menggunakan Sistem Informasi Manajemen Gaji Pegawai!**
 
